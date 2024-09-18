@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas ia</title>
+</head>
+<body>
+    
+
+<html>
+    
+<head><base href="https://we5.space">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orion Nexus - Directorio de Herramientas de IA</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<style>
+    :root {
+        --primary-color: #0c0401;
+        --secondary-color: #be956b;
+        --text-color: #be956b;
+        --bg-color: #0c0300;
+        --white: #FFFFFF;
+        --card-bg: #FFFFFF;
+        --card-border: #E0E0E0;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Source Code Pro', monospace;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    .hero {
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary-color);
+    }
+
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: var(--white);
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .search-container {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    #search-input {
+        width: 500px;
+        height: 50px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: #be956b;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        padding-right: 50px;
+    }
+
+    #search-icon {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #be956b;
+        font-size: 1.5rem;
+    }
+
+    .main-content {
+        margin-left: 250px;
+        padding-top: 0;
+        background-color: var(--bg-color);
+    }
+
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 250px;
+        background-color: #0c0300;
+        padding: 20px;
+        overflow-y: auto;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        font-family: 'Source Code Pro', monospace;
+        z-index: 1000;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .logo img {
+        max-width: 120px;
+        height: auto;
+    }
+
+    .tool-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .tool-list li {
+        margin-bottom: 10px;
+    }
+
+    .tool-list a {
+        display: flex;
+        align-items: center;
+        color: #be956b;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .tool-list a i {
+        color: #ff4500;
+        margin-right: 10px;
+    }
+
+    .tool-list a:hover {
+        background-color: rgba(190, 149, 107, 0.1);
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .social-icons a {
+        color: #ff4500;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: #ffffff;
+    }
+
+    .tools-section {
+        padding: 50px 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 30px;
+        color: #ff4500;
+    }
+
+    .featured-tools {
+        padding: 50px 20px;
+    }
+
+    .featured-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .featured-card {
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .featured-card h3 {
+        color: #be956b;
+        margin-bottom: 10px;
+    }
+
+    .hot-badge {
+        background-color: #ff4500;
+        color: #ffffff;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        margin-left: 10px;
+    }
+
+    .hot-badge i {
+        color: #ffffff;
+    }
+
+    .featured-button {
+        display: inline-block;
+        background-color: #be956b;
+        color: #0c0401;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 15px;
+        transition: background-color 0.3s ease;
+    }
+
+    .featured-button:hover {
+        background-color: #0c0401;
+        color: #ff4500;
+    }
+
+    .category {
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #ff4500;
+    }
+
+    .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        background-color: var(--bg-color);
+    }
+
+    .tool-card {
+        background-color: #1a1a1a;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .tool-name {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #be956b;
+        font-family: 'Source Code Pro', monospace;
+    }
+
+    .tool-description {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        color: #ffffff;
+        font-family: 'Source Code Pro', monospace;
+    }
+
+    .visit-button {
+        margin-top: auto;
+        background-color: #ff4500;
+        color: var(--white);
+        text-decoration: none;
+        padding: 10px 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-radius: 5px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .visit-button:hover {
+        background-color: var(--primary-color);
+        color: #ff4500;
+    }
+
+    footer {
+        background-color: #0c0401;
+        color: #be956b;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-content p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    @media (max-width: 1024px) {
+        .sidebar {
+            width: 200px;
+        }
+        .main-content {
+            margin-left: 200px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            width: 100%;
+            position: static;
+            height: auto;
+        }
+
+        .main-content {
+            margin-left: 0;
+        }
+
+        .search-container {
+            max-width: 90%;
+        }
+
+        #search-input {
+            width: calc(100% - 60px);
+        }
+
+        .featured-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    mark {
+        background-color: #ff450033;
+        color: inherit;
+    }
+
+    .tool-card .tool-logo i {
+        font-size: 48px;
+        color: #ff4500;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+</head>
+<body>
+    <section class="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h2>Buscar herramienta</h2>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Buscar herramientas...">
+                <i class="fas fa-search" id="search-icon"></i>
+            </div>
+        </div>
+    </section>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="https://www.webcincodev.com/blog/wp-content/uploads/2024/09/IA.png" alt="Orion Nexus Logo" width="120" height="120">
+        </div>
+        <h3 style="color: #ff4500;">Herramientas IA</h3>
+        <ul class="tool-list">
+            <li>
+                <a href="#musica">
+                    <i class="fas fa-music"></i>
+                    Música
+                </a>
+            </li>
+            <li>
+                <a href="#imagen">
+                    <i class="fas fa-image"></i>
+                    Imagen
+                </a>
+            </li>
+            <li>
+                <a href="#video">
+                    <i class="fas fa-video"></i>
+                    Video
+                </a>
+            </li>
+            <li>
+                <a href="#texto">
+                    <i class="fas fa-font"></i>
+                    Texto
+                </a>
+            </li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://www.webcincodev.com/blog/" target="_blank"><i class="fas fa-blog"></i></a>
+            <a href="https://github.com/jacar/" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://webcincodev.com/qr/" target="_blank"><i class="fas fa-qrcode"></i></a>
+            <a href="https://webcincodev.com/edicode/" target="_blank"><i class="fas fa-code"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <section class="description">
+            <h1>Orion Nexus - Directorio de Herramientas de IA</h1>
+            <p>Bienvenido a Orion Nexus, tu portal integral para descubrir y explorar las herramientas de Inteligencia Artificial más innovadoras y potentes. Nuestro directorio cuidadosamente curado ofrece soluciones de IA para música, imágenes, video y texto, diseñadas para impulsar tu creatividad y productividad. Explora nuestras categorías y mantente a la vanguardia de la revolución de la IA con Orion Nexus.</p>
+        </section>
+        <section class="tools-section">
+            <h1>Directorio de Herramientas de IA</h1>
+
+            <div class="featured-tools">
+                <h2>Herramientas Destacadas</h2>
+                <div class="featured-grid">
+                    <div class="featured-card">
+                        <h3>ChatGPT <span class="hot-badge"><i class="fas fa-fire"></i> HOT</span></h3>
+                        <p>Modelo de lenguaje avanzado para conversaciones y generación de texto.</p>
+                        <a href="https://openai.com/chatgpt" class="featured-button">Explorar</a>
+                    </div>
+                    <div class="featured-card">
+                        <h3>DALL-E 2 <span class="hot-badge"><i class="fas fa-fire"></i> HOT</span></h3>
+                        <p>Sistema de IA que crea imágenes realistas a partir de descripciones de texto.</p>
+                        <a href="https://openai.com/dall-e-2" class="featured-button">Explorar</a>
+                    </div>
+                    <div class="featured-card">
+                        <h3>Midjourney <span class="hot-badge"><i class="fas fa-fire"></i> HOT</span></h3>
+                        <p>Generación de imágenes impulsada por IA a partir de indicaciones de texto.</p>
+                        <a href="https://midjourney.com" class="featured-button">Explorar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="musica" class="category">
+                <h2>Herramientas de IA para Música</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-robot" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">AIVA</div>
+                        <div class="tool-description">Compositor de IA que crea música original para varios proyectos.</div>
+                        <a href="https://www.aiva.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-brain" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Amper Music</div>
+                        <div class="tool-description">Composición musical con IA para creadores de contenido.</div>
+                        <a href="https://www.ampermusic.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-cogs" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Boomy</div>
+                        <div class="tool-description">Crea y monetiza pistas musicales generadas por IA.</div>
+                        <a href="https://boomy.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-microchip" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Amadeus Code</div>
+                        <div class="tool-description">Asistente de composición musical con IA para la creación de melodías.</div>
+                        <a href="https://amadeuscode.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-lightbulb" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Endel</div>
+                        <div class="tool-description">Escenarios sonoros personalizados para concentración, relajación y sueño.</div>
+                        <a href="https://endel.io" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-magic" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Landr</div>
+                        <div class="tool-description">Masterización de audio y distribución musical impulsadas por IA.</div>
+                        <a href="https://landr.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-atom" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Melodrive</div>
+                        <div class="tool-description">Motor de música adaptativa para juegos y medios interactivos.</div>
+                        <a href="https://melodrive.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-rocket" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Mubert</div>
+                        <div class="tool-description">Transmisiones de música generadas por IA para varios estados de ánimo y actividades.</div>
+                        <a href="https://mubert.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-broadcast-tower" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">MuseNet</div>
+                        <div class="tool-description">Red neuronal profunda para generar composiciones musicales.</div>
+                        <a href="https://openai.com/research/musenet" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-server" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">OpenAI Jukebox</div>
+                        <div class="tool-description">Red neuronal que genera música con voces.</div>
+                        <a href="https://openai.com/research/jukebox" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-database" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Soundraw</div>
+                        <div class="tool-description">Generador de música de IA para creadores de contenido y cineastas.</div>
+                        <a href="https://soundraw.io" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-laptop-code" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Splash</div>
+                        <div class="tool-description">Crea música y efectos de sonido personalizados con IA.</div>
+                        <a href="https://splashmusic.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-code-branch" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Amper Score</div>
+                        <div class="tool-description">Composición musical asistida por IA para profesionales de los medios.</div>
+                        <a href="https://www.ampermusic.com/amperscore" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-layer-group" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Ecrett Music</div>
+                        <div class="tool-description">Generador de música de fondo impulsado por IA para videos.</div>
+                        <a href="https://ecrettmusic.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-sitemap" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Filmstro</div>
+                        <div class="tool-description">Software de música adaptativa para creadores de videos.</div>
+                        <a href="https://filmstro.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-project-diagram" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Jukedeck</div>
+                        <div class="tool-description">Plataforma de creación musical de IA para contenido de video.</div>
+                        <a href="https://www.jukedeck.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-chart-network" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Muzeek</div>
+                        <div class="tool-description">Generador de música impulsado por IA para anuncios y marketing.</div>
+                        <a href="https://muzeek.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-vr-cardboard" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Oorbit</div>
+                        <div class="tool-description">Música generada por IA para juegos y mundos virtuales.</div>
+                        <a href="https://oorbit.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-sitemap" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Soundful</div>
+                        <div class="tool-description">Creación musical impulsada por IA para creadores y empresas.</div>
+                        <a href="https://soundful.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-microchip" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Beatoven.ai</div>
+                        <div class="tool-description">Crea música única y libre de regalías con la ayuda de IA.</div>
+                        <a href="https://beatoven.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-database" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Elysia AI</div>
+                        <div class="tool-description">IA para producción musical de alta calidad.</div>
+                        <a href="https://elysia.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-server" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Waveseer</div>
+                        <div class="tool-description">Herramienta para crear pistas personalizadas usando IA.</div>
+                        <a href="https://waveseer.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-rocket" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Kreator</div>
+                        <div class="tool-description">IA que ayuda a crear música ambiental personalizada.</div>
+                        <a href="https://kreator.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-broadcast-tower" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">MeloTree</div>
+                        <div class="tool-description">Composición colaborativa con IA para músicos.</div>
+                        <a href="https://melotree.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-cogs" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">SongSmith</div>
+                        <div class="tool-description">Generador de letras e ideas de canciones usando IA.</div>
+                        <a href="https://songsmith.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="imagen" class="category">
+                <h2>Herramientas de IA para Imágenes</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-brain" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">DALL-E 2</div>
+                        <div class="tool-description">Sistema de IA que crea imágenes realistas a partir de descripciones de texto.</div>
+                        <a href="https://openai.com/dall-e-2" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-rocket" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Midjourney</div>
+                        <div class="tool-description">Generación de imágenes impulsada por IA a partir de indicaciones de texto.</div>
+                        <a href="https://midjourney.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-cogs" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Stable Diffusion</div>
+                        <div class="tool-description">Modelo de IA de código abierto para generar imágenes detalladas.</div>
+                        <a href="https://stability.ai/stable-diffusion" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-magic" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Artbreeder</div>
+                        <div class="tool-description">Herramienta de IA para crear y mezclar imágenes.</div>
+                        <a href="https://www.artbreeder.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-laptop-code" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">RunwayML</div>
+                        <div class="tool-description">Kit de herramientas creativas con varias funciones impulsadas por IA.</div>
+                        <a href="https://runwayml.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-lightbulb" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">NightCafe Creator</div>
+                        <div class="tool-description">Generador de arte con IA utilizando varios algoritmos.</div>
+                        <a href="https://nightcafe.studio" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-atom" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Photoshop Neural Filters</div>
+                        <div class="tool-description">Filtros y herramientas impulsados por IA en Adobe Photoshop.</div>
+                        <a href="https://helpx.adobe.com/photoshop/using/neural-filters.html" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-rocket" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Rosebud AI</div>
+                        <div class="tool-description">Fotos de modelos generadas por IA para una representación diversa.</div>
+                        <a href="https://rosebud.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-magic" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Let's Enhance</div>
+                        <div class="tool-description">Escalado y mejora de imágenes impulsadas por IA.</div>
+                        <a href="https://letsenhance.io" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-broadcast-tower" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Wombo Dream</div>
+                        <div class="tool-description">Aplicación creadora de arte de IA para imágenes estilizadas.</div>
+                        <a href="https://dream.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-server" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Prisma</div>
+                        <div class="tool-description">Editor de fotos impulsado por IA para efectos artísticos.</div>
+                        <a href="https://prisma-ai.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-cogs" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Deep Art Effects</div>
+                        <div class="tool-description">Aplicación de IA para aplicar estilos artísticos a fotos.</div>
+                        <a href="https://deepart.io" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-magic" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Remove.bg</div>
+                        <div class="tool-description">Eliminación de fondo impulsada por IA para imágenes.</div>
+                        <a href="https://www.remove.bg" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-brain" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">DeepArt.io</div>
+                        <div class="tool-description">Crea imágenes artísticas al estilo de pintores famosos.</div>
+                        <a href="https://deepart.io" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-rocket" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Pixlr</div>
+                        <div class="tool-description">Editor de fotos en línea mejorado con IA y herramienta de diseño.</div>
+                        <a href="https://pixlr.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-cogs" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Fotor</div>
+                        <div class="tool-description">Editor de fotos en línea con funciones impulsadas por IA.</div>
+                        <a href="https://www.fotor.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-magic" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Canva</div>
+                        <div class="tool-description">Plataforma de diseño con herramientas y características impulsadas por IA.</div>
+                        <a href="https://www.canva.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-atom" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Vance AI</div>
+                        <div class="tool-description">Mejorador y editor de imágenes impulsado por IA.</div>
+                        <a href="https://vanceai.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-server" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Topaz Labs</div>
+                        <div class="tool-description">Software de mejora de fotos y videos impulsado por IA.</div>
+                        <a href="https://topazlabs.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-broadcast-tower" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">DeepAI</div>
+                        <div class="tool-description">Varias herramientas y funciones de generación y edición de imágenes impulsadas por IA.</div>
+                        <a href="https://deepai.org" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-cogs" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Snappa</div>
+                        <div class="tool-description">Herramienta de diseño gráfico instantáneo con funciones de IA.</div>
+                        <a href="https://snappa.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-magic" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Overlay AI</div>
+                        <div class="tool-description">Crea efectos visuales únicos en imágenes.</div>
+                        <a href="https://overlayai.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="video" class="category">
+                <h2>Herramientas de IA para Video</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-rocket" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Synthesia</div>
+                        <div class="tool-description">Plataforma de creación de videos con IA y presentadores virtuales.</div>
+                        <a href="https://www.synthesia.io" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-lightbulb" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Lumen5</div>
+                        <div class="tool-description">Creación de videos impulsada por IA a partir de contenido textual.</div>
+                        <a href="https://www.lumen5.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-magic" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Runway ML</div>
+                        <div class="tool-description">Herramientas de edición y generación de videos impulsadas por IA.</div>
+                        <a href="https://runwayml.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-code-branch" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">DeepBrain AI</div>
+                        <div class="tool-description">Humanos virtuales impulsados por IA para contenido de video.</div>
+                        <a href="https://deepbrain.io" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-broadcast-tower" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Pictory</div>
+                        <div class="tool-description">Creación de videos con IA a partir de contenido extenso.</div>
+                        <a href="https://pictory.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-server" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">InVideo</div>
+                        <div class="tool-description">Plataforma de creación y edición de videos asistida por IA.</div>
+                        <a href="https://invideo.io" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-robot" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Hour One</div>
+                        <div class="tool-description">Creación de videos con presentadores virtuales impulsada por IA.</div>
+                        <a href="https://hourone.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-cogs" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Kapwing</div>
+                        <div class="tool-description">Editor de videos en línea con funciones impulsadas por IA.</div>
+                        <a href="https://www.kapwing.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-lightbulb" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Fliki</div>
+                        <div class="tool-description">Herramienta de texto a video y texto a voz impulsada por IA.</div>
+                        <a href="https://fliki.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-atom" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Elai</div>
+                        <div class="tool-description">Plataforma de generación de videos impulsida por IA con presentadores virtuales.</div>
+                        <a href="https://elai.io" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-rocket" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Veed.io</div>
+                        <div class="tool-description">Editor de videos en línea con funciones impulsadas por IA.</div>
+                        <a href="https://www.veed.io" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-magic" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Magisto</div>
+                        <div class="tool-description">Plataforma de creación y edición de videos impulsada por IA.</div>
+                        <a href="https://www.magisto.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-broadcast-tower" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Topaz Video AI</div>
+                        <div class="tool-description">Mejora y escalado de videos impulsados por IA.</div>
+                        <a href="https://topazlabs.com/video-ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-cogs" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Wibbitz</div>
+                        <div class="tool-description">Creación de videos automáticos con inteligencia artificial.</div>
+                        <a href="https://www.wibbitz.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-lightbulb" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Descript</div>
+                        <div class="tool-description">Herramienta de edición de video y audio asistida por IA.</div>
+                        <a href="https://www.descript.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-robot" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">DeepBrain Video</div>
+                        <div class="tool-description">Herramienta de creación de videos con asistentes virtuales IA.</div>
+                        <a href="https://deepbrain.io/video" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="texto" class="category">
+                <h2>Herramientas de IA para Texto</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-lightbulb" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">GPT-3</div>
+                        <div class="tool-description">Motor de generación de texto avanzado.</div>
+                        <a href="https://openai.com/gpt-3" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-brain" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Copy.ai</div>
+                        <div class="tool-description">Generación de contenido automatizado con IA.</div>
+                        <a href="https://www.copy.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-cogs" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Rytr</div>
+                        <div class="tool-description">Asistente de escritura de IA que ayuda a generar ideas.</div>
+                        <a href="https://rytr.me" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-robot" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Jasper</div>
+                        <div class="tool-description">Generación de contenido para marketing y redes sociales.</div>
+                        <a href="https://www.jasper.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-lightbulb" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Kuki</div>
+                        <div class="tool-description">Chatbot conversacional inteligente usando IA.</div>
+                        <a href="https://www.kuki.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-brain" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">Narrative Science</div>
+                        <div class="tool-description">Generación de informes y narrativas automatizadas con IA.</div>
+                        <a href="https://www.narrativescience.com" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">
+                            <i class="fas fa-cogs" style="font-size: 48px; color: #ff4500;"></i>
+                        </div>
+                        <div class="tool-name">CopySmith</div>
+                        <div class="tool-description">Generación de copias publicitarias y contenido de marketing.</div>
+                        <a href="https://copysmith.ai" target="_blank" class="visit-button">Visitar Aplicación</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> @webcincodev</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('search-input').addEventListener('input', performSearch);
+
+        function performSearch() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
+            const categories = document.querySelectorAll('.category');
+            let hasResults = false;
+
+            categories.forEach(category => {
+                const categoryName = category.querySelector('h2').textContent.toLowerCase();
+                const categoryTools = category.querySelectorAll('.tool-card');
+                let categoryHasResults = false;
+
+                categoryTools.forEach(card => {
+                    const toolName = card.querySelector('.tool-name');
+                    const toolDescription = card.querySelector('.tool-description');
+                    const nameText = toolName.textContent.toLowerCase();
+                    const descriptionText = toolDescription.textContent.toLowerCase();
+                    
+                    if (nameText.includes(searchTerm) || descriptionText.includes(searchTerm) || categoryName.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        categoryHasResults = true;
+                        hasResults = true;
+
+                        toolName.innerHTML = highlightMatch(toolName.textContent, searchTerm);
+                        toolDescription.innerHTML = highlightMatch(toolDescription.textContent, searchTerm);
+                    } else {
+                        card.style.display = 'none';
+                        toolName.innerHTML = toolName.textContent;
+                        toolDescription.innerHTML = toolDescription.textContent;
+                    }
+                });
+
+                category.style.display = categoryHasResults ? 'block' : 'none';
+            });
+
+            const noResultsMessage = document.getElementById('no-results-message');
+            if (!hasResults) {
+                if (!noResultsMessage) {
+                    const message = document.createElement('p');
+                    message.id = 'no-results-message';
+                    message.textContent = 'No se encontraron resultados para la búsqueda.';
+                    message.style.textAlign = 'center';
+                    message.style.marginTop = '20px';
+                    message.style.color = '#ff4500';
+                    document.querySelector('.tools-section').appendChild(message);
+                }
+            } else if (noResultsMessage) {
+                noResultsMessage.remove();
+            }
+        }
+
+        function highlightMatch(text, searchTerm) {
+            if (searchTerm === '') return text;
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+
+        document.querySelectorAll('.tool-list a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
